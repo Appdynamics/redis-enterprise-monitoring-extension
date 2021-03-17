@@ -1,10 +1,10 @@
 #If SIM is enabled, use this metricPrefix
-metricPrefix: "Custom Metrics|Redis Enterprise|"
+#metricPrefix: "Custom Metrics|Redis Enterprise|"
 
 # If SIM is not enabled, use this
 #Make sure to replace <COMPONENT_ID> with the appropriate one from your environment.
 #To find the COMPONENT_ID in your environment, please follow the screen shot https://docs.appdynamics.com/display/PRO42/Build+a+Monitoring+Extension+Using+Java
-#metricPrefix: Server|Component:<COMPONENT_ID>|Custom Metrics|Redis Enterprise|
+metricPrefix: "Server|Component:<COMPONENT_ID>|Custom Metrics|Redis Enterprise|"
 
 
 servers:
@@ -64,7 +64,7 @@ metricPathReplacements:
 
 # The sections [customDashboard] and [controllerInfo] need to be enabled for uploading dashboard to the controller UI
 customDashboard:
-  enabled: true
+  enabled: false
   dashboardName: "Redis EnterPrise Monitor Dashboard"
   sslCertCheckEnabled: true
   # Update the path to the dashboard file.
@@ -90,5 +90,3 @@ controllerInfo:
   applicationName: "" # -Dappdynamics.agent.applicationName
   tierName: "" # -Dappdynamics.agent.tierName
   nodeName: "" # -Dappdynamics.agent.nodeName
-
-enableHealthChecks: true # If not set, will be retrieved from "-Dappdynamics.agent.monitors.healthchecks.enable=true". Defaults to true.

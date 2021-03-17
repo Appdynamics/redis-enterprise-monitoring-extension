@@ -325,9 +325,10 @@ Always feel free to fork and contribute any changes directly via [GitHub](https:
 ## Version
 | Name                        |  Version                    | 
 | :---------------------------| :---------------------------|
-| Extension Version:          | 1.0.1                  |
-| Controller Compatibility:   | 2.2 or Later                |
+| Extension Version:          | 1.0.2                  |
+| Controller Compatibility:   | 4.5 or Later                |
+| Agent Compatibility:        | 4.5.13 or Later             |
 | Tested On:                  | Redis Enterprise Software v5.4.x       |
 | Operating System Tested On: | Mac OS, Linux               |
-| Last updated On:            | May 28, 2020          |
+| Last updated On:            | March 12, 2021          |
 | List of changes to this extension| [Change log](https://github.com/Appdynamics/redis-enterprise-monitoring-extension/blob/master/CHANGELOG.md)
