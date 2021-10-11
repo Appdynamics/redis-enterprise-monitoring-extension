@@ -1,0 +1,78 @@
+#This will create this metric in all the tiers, under this path
+metricPrefix: Custom Metrics|Redis Enterprise|
+
+#This will create it in specific Tier/Component. Make sure to replace <COMPONENT_ID> with the appropriate one from your environment.
+#To find the <COMPONENT_ID> in your environment, please follow the screenshot https://docs.appdynamics.com/display/PRO42/Build+a+Monitoring+Extension+Using+Java
+#metricPrefix: Server|Component:10|Custom Metrics|Redis Enterprise|
+
+
+servers:
+    - uri: 'https://localhost:9443'
+      username: 'vishaka.sekar@appdynamics.com'
+      password: 'xxxx'
+      encryptedPassword: ''
+      useSSL: 'true'
+      displayName: 'myCluster'
+
+connection:
+  socketTimeout: 5000 # Read Timeout
+  connectTimeout: 5000 # Connection Timeout
+
+  sslCertCheckEnabled: true #
+  sslCipherSuites: [] # Defaults to "default".
+  sslVerifyHostname: true
+  sslProtocols: [] # If null, by default TLSv1, TLSv1.1, TLSv1.2 are supported.
+
+  sslTrustStorePath: "/Users/vishaka.sekar/AppDynamics/ssl/client_truststore.jks" # If not set, will set value from "-Dappdynamics.agent.monitors.truststore.path=/path/cacerts" if present, else will set value as <MachineAgentHome>/conf/extensions-cacerts.jks.
+  sslTrustStorePassword: "xxxx" # If not set, will set value from "-Dappdynamics.agent.monitors.truststore.password".
+  sslTrustStoreEncryptedPassword: "" ## If not set, will set value from "-Dappdynamics.agent.monitors.truststore.encryptedPassword".
+
+objects:
+  database: ['test']
+  node: ['']
+  shard: ['']
+
+proxy:
+  uri: ""
+  username: ""
+  password: ""
+  encryptedPassword: ""
+
+encryptionKey: "xxxx"
+
+# numberOfThreads = for each server
+numberOfThreads: 20
+
+metricPathReplacements:
+  - replace: "_"
+    replaceWith: "%"
+  - replace: "percent"
+    replaceWith: "%"
+
+customDashboard:
+  enabled: false
+  dashboardName: "Redis EnterPrise Monitor Dashboard"
+  sslCertCheckEnabled: true
+  # Update the path to the dashboard file.
+  pathToSIMDashboard:
+  pathToNormalDashboard:
+  periodicDashboardCheckInSeconds: 300
+
+# If any of the following fields are not set, the values of the specific fields are set from the system properties of the corresponding fields as specified in the comments.
+# If the system properties are not set for the field, then the data is retrieved from machine agent configFile. Please refer to ControllerInfoFactory for more details.
+controllerInfo:
+  controllerHost: "localhost" # -Dappdynamics.controller.hostName
+  controllerPort: 8090 # -Dappdynamics.controller.port
+  controllerSslEnabled: false # -Dappdynamics.controller.ssl.enabled
+  enableOrchestration: false # N/A
+  uniqueHostId: "" # -Dappdynamics.agent.uniqueHostId
+  username: "" # -Dappdynamics.agent.monitors.controller.username
+  password: "" # -Dappdynamics.agent.monitors.controller.password
+  encryptedPassword: "" # -Dappdynamics.agent.monitors.controller.encryptedPassword
+  accountAccessKey: "" # -Dappdynamics.agent.accountAccessKey
+  account: "customer1" # -Dappdynamics.agent.accountName
+  machinePath: "" # -Dappdynamics.machine.agent.hierarchyPath
+  simEnabled: false # -Dappdynamics.sim.enabled
+  applicationName: "" # -Dappdynamics.agent.applicationName
+  tierName: "" # -Dappdynamics.agent.tierName
+  nodeName: "" # -Dappdynamics.agent.nodeName

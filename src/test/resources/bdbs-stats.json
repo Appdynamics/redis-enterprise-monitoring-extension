@@ -1,0 +1,46 @@
+ {
+  "3": {
+    "conns": 10,
+    "conns1": {
+      "metric1": 40,
+      "conns2": {
+        "metric2": 50
+      }
+    },
+    "egress_bytes": 0,
+    "etime": "2019-07-23T19:51:23Z",
+    "evicted_objects": 0,
+    "expired_objects": 0,
+    "fork_cpu_system": 0,
+    "fork_cpu_user": 0,
+    "ingress_bytes": 0,
+    "instantaneous_ops_per_sec": 7,
+    "last_req_time": "1970-01-01T00:00:00Z",
+    "last_res_time": "1970-01-01T00:00:00Z",
+    "main_thread_cpu_system": 0.002,
+    "main_thread_cpu_user": 0,
+    "mem_frag_ratio": 2.68,
+    "mem_size_lua": 37888,
+    "monitor_sessions_count": 0,
+    "no_of_keys": 0,
+    "other_req": 0,
+    "other_res": 0,
+    "pubsub_channels": 0,
+    "pubsub_patterns": 0,
+    "read_hits": 0,
+    "read_misses": 0,
+    "read_req": 0,
+    "read_res": 0,
+    "shard_cpu_system": 0.004,
+    "shard_cpu_user": 0,
+    "stime": "2019-07-23T19:51:18Z",
+    "total_connections_received": 0,
+    "total_req": 0,
+    "total_res": 0,
+    "used_memory": 2016040,
+    "write_hits": 0,
+    "write_misses": 0,
+    "write_req": 0,
+    "write_res": 0
+  }
+}

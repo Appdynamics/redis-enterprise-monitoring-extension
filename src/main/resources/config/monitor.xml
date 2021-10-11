@@ -1,0 +1,33 @@
+    <!--
+  ~ Copyright 2018. AppDynamics LLC and its affiliates.
+  ~ All Rights Reserved.
+  ~ This is unpublished proprietary source code of AppDynamics LLC and its affiliates.
+  ~ The copyright notice above does not evidence any actual or intended publication of such source code.
+  ~
+  -->
+
+<monitor>
+        <name>RedisEnterpriseMonitor</name>
+        <type>managed</type>
+        <enabled>true</enabled>
+        <description>Redis Enterprise Monitor</description>
+        <monitor-configuration></monitor-configuration>
+        <monitor-run-task>
+                <execution-style>periodic</execution-style>
+                <execution-frequency-in-seconds>60</execution-frequency-in-seconds>
+                <name>Redis Enterprise Monitor Run Task</name>
+                <display-name>Redis Enterprise Monitor Task</display-name>
+                <description>Redis Enterprise Monitor Task</description>
+                <type>java</type>
+                <execution-timeout-in-secs>60</execution-timeout-in-secs>
+                <task-arguments>
+                    <!-- config and metricsFromConfig file-->
+                        <argument name="config-file" is-required="true" default-value="monitors/RedisEnterpriseMonitor/config.yml" />
+                        <argument name="metrics-file" is-required="true" default-value="monitors/RedisEnterpriseMonitor/metrics.xml" />
+                </task-arguments>
+                <java-task>
+                        <classpath>redis-enterprise-monitoring-extension.jar</classpath>
+                        <impl-class>com.appdynamics.extensions.redis_enterprise.RedisEnterpriseMonitor</impl-class>
+                </java-task>
+        </monitor-run-task>
+</monitor>
